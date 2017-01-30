@@ -1,6 +1,11 @@
 <h1><%= @horse.name %></h1>
 
 <h2>Info</h2>
-<p>Breed: <%= @horse.breed.name %></p>
-<p>Jockey: <%= @horse.jockey.name %></p>
+<p>Breed: <%= @horse.breed %></p>
+<p>Jockey: <%= @horse.jockey %></p>
 <p>Total Winnings: <%= @horse.total_winnings %></p>
+<a href="/horses/<%= @horse.id %>/edit">Edit</a>
+<h4><form action="/horses/<%= @horse.id %>" method="post">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" value="Delete" />
+</form></h4>
