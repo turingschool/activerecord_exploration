@@ -1,0 +1,20 @@
+[31mF[0m
+
+Failures:
+
+  1) Horse.total_winnings returns total winnings for all horses
+     [31mFailure/Error: expect(Horse.total_winnings).to eq(7)[0m
+     [31m[0m
+     [31m  expected: 7[0m
+     [31m       got: 21[0m
+     [31m[0m
+     [31m  (compared using ==)[0m
+     [36m# ./spec/models/horse_spec.rb:9:in `block (3 levels) in <top (required)>'[0m
+
+Finished in 0.04501 seconds (files took 0.68901 seconds to load)
+[31m1 example, 1 failure[0m
+
+Failed examples:
+
+[31mrspec ./spec/models/horse_spec.rb:5[0m [36m# Horse.total_winnings returns total winnings for all horses[0m
+
