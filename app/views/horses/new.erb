@@ -7,12 +7,12 @@
   <input type="textfield" name="horse[total_winnings]">
   <label for="">Jockey:</label>
   <select name="horse[jockey_id]">
-    <% @jockeys.each do |jockey| %>
+    <% Jockey.all.each do |jockey| %>
       <option value=<%= jockey.id %>><%= jockey.name %></option>
     <% end %>
   </select>
   <select name="horse[breed_id]">
-    <% @breeds.each do |breed| %>
+    <% Breed.all.each do |breed| %>
       <option value=<%= breed.id %>><%= breed.name %></option>
     <% end %>
   </select>
