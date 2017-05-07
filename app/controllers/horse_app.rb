@@ -16,7 +16,7 @@ class HorseApp < Sinatra::Base
   end
 
   post '/horses' do
-    @horse = Horse.create(params[:horse])
+    @horse = Horse.create!(params[:horse])
     redirect "/horses/#{@horse.id}"
   end
 
