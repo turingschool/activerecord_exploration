@@ -1,13 +1,18 @@
 ENV['RACK_ENV'] = 'test'
 
-require "rspec"
+require 'rspec'
 require 'database_cleaner'
+require 'capybara/dsl'
 
 require File.expand_path('../../config/environment.rb', __FILE__)
+
+Capybara.app = HorseApp
 
 DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |c|
+  c.include Capybara::DSL
+
   c.before(:all) do
     DatabaseCleaner.clean
   end
