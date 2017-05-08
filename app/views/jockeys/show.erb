@@ -1,0 +1,21 @@
+<h1>Jockey: <%= @jockey.name %></h1>
+
+<h2>Horses</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Breed</th>
+    <th>Total Winnings</th>
+  </tr>
+  <% @jockey.horses.each do |horse| %>
+    <tr>
+      <td><%= horse.name %></td>
+      <td><%= horse.breed.name %></td>
+      <td><%= horse.total_winnings %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Stats</h2>
+<p>Total Winnings: <%= @jockey.horses.total_winnings %></p>
+<p>Average Winnings: <%= @jockey.horses.average_winnings %></p>

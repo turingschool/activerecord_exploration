@@ -1,0 +1,21 @@
+<h1>Create a New Horse</h1>
+
+<form action="/horses/<%= @horse.id %>" method="post">
+  <input type="hidden" name="_method" value="PUT" />
+  <label for="">Name:</label>
+  <input type="textfield" name="horse[name]" value="<%= @horse.name %>">
+  <label for="">Total Winnings:</label>
+  <input type="textfield" name="horse[total_winnings]" value="<%= @horse.total_winnings %>">
+  <label for="">Jockey:</label>
+  <select name="horse[jockey_id]">
+    <% @jockeys.each do |jockey| %>
+      <option value=<%= jockey.id %>><%= jockey.name %></option>
+    <% end %>
+  </select>
+  <select name="horse[breed_id]">
+    <% @breeds.each do |breed| %>
+      <option value=<%= breed.id %>><%= breed.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Update Horse" />
+</form>

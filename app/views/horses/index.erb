@@ -1,0 +1,27 @@
+<h1>All Horses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Breed</th>
+    <th>Total Winnings</th>
+    <th>Jockey</th>
+    <th>Additional Info</th>
+    <th>Delete</th>
+  </tr>
+  <% @horses.each do |horse| %>
+    <tr>
+      <td><%= horse.name %></td>
+      <td><%= horse.breed.name %></td>
+      <td><%= horse.total_winnings %></td>
+      <td><%= horse.jockey.name %></td>
+      <td><a href="/horses/<%=horse.id %>">Additional Info</a></td>
+      <td>
+        <form action="/horses/<%= horse.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE" />
+          <input type="submit" value="Delete" />
+        </form>
+      </td>
+    </tr>
+  <% end %>
+</table>
