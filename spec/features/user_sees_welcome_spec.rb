@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require './spec/spec_helper'
 
 RSpec.describe "When a user visits homepage" do
   it "sees a welcome message" do 

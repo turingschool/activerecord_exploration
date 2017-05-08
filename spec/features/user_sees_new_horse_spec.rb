@@ -1,12 +1,10 @@
-require_relative '../spec_helper'
+require './spec/spec_helper'
 
 RSpec.describe "When a user creates a new horse" do
   it "sees the new horse on a new page" do
-    # As a user -> capybara
-    # When I visit the new horse page
     visit('horses/new')
     # And I fill in name and total winnings
-    fill_in("Name:", with: "Sun Shines Brightly")
+    fill_in("horse[name]", with: "Sun Shines Brightly")
     # And I click the "Create New Horse" button
     click_button("Create New Horse")
     # Then I should see the new horse on a new page
