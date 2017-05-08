@@ -1,0 +1,15 @@
+<h1>All Jockeys</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Additional Info</th>
+  </tr>
+  <% @jockeys.each do |jockey| %>
+    <tr>
+      <td><%= jockey.name %></td>
+      <td><a href="/jockeys/<%= jockey.id %>">Additional Info</a></td>
+    </tr>
+  <% end %>
+</table>
+
