@@ -1,0 +1,8 @@
+<button><a href="/jockeys">Go back to see all of the Jockeys</a></button>
+<h1>Jockey: <%= @jockey.name %></h1>
+<h2><%= @jockey.name.split(" ").first %> owns these Horses:</h2>
+<% @jockey.horses.each do |horse| %>
+<h3>  <%= horse.name %></h5>
+<p>Age: <%= horse.age %> </p>
+<p>Total Winnings: <%= horse.total_winnings %></p>
+<% end %>
