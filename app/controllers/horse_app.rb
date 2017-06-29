@@ -5,7 +5,7 @@ class HorseApp < Sinatra::Base
   end
 
   get '/jockey/:id' do
-    @jockeys = Jockey.all
+    @jockey = Jockey.find_by(params[:id])
     erb :"jockeys/jockey"
   end
 end
