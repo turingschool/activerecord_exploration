@@ -1,0 +1,9 @@
+<head>
+  <title>Horses</title>
+</head>
+<h1>TURING STABLES: Horse Registry</h1>
+<% @horses.each do |horse| %>
+<div>
+  <h3><a href="/horses/<%= horse.id %>"><%= horse.name %></a></h3>
+</div>
+<% end %>
