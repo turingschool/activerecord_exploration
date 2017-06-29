@@ -1,0 +1,8 @@
+<h1> Update your Horse </h1>
+
+<form action='/horses/<%= @horse.id %>' method='POST'>
+  <input type='hidden' name="_method" value="PUT" />
+  <label>Update Name</label>
+  <input type="test" name="horse[name]" value="<%= @horse.name %>"><br/>
+  <input type="submit"><br/>
+</form>
