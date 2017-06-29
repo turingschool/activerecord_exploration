@@ -20,9 +20,14 @@ class HorseApp < Sinatra::Base
     redirect '/horses'
   end
 
-  get '/horses/:id/edit'
+  get '/horses/:id/edit' do
     @horse = Horse.find(params[:id])
     erb :"horses/edit"
+  end
+
+  put '/horses/:id' do |id|
+    Horse.update(id.to_i, params[:horse])
+    redirect "/horses/#{id}"
   end
 
   get '/horses/:id' do
