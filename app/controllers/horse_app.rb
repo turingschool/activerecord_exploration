@@ -1,11 +1,11 @@
 class HorseApp < Sinatra::Base
   get '/horses' do
     @horses = Horse.all
-    erb :index
+    erb :"horses/index"
   end
 
-  get '/jockey/:id'
+  get '/jockey/:id' do
     @jockeys = Jockey.all
-    erb :jockey
+    erb :"jockeys/jockey"
   end
 end
