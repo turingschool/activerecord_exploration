@@ -1,0 +1,9 @@
+<h1><%= @jockey.name %>'s Horses</h1>
+
+<% @jockey.horses.each do |horse| %>
+  <p><%= horse.name %></p>
+  <p><%= horse.age %></p>
+<% end %>
+
+<h1><%= @jockey.name %>'s Total Winnings:</h1>
+<%= @jockey.horses.total_winnings_by_jockey %>
