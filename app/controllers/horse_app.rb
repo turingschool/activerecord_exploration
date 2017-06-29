@@ -40,4 +40,9 @@ class HorseApp < Sinatra::Base
     erb :"jockeys/show"
   end
 
+  delete '/horses/:id' do |id|
+    Horse.destroy(id.to_i)
+    redirect '/horses'
+  end
+
 end
