@@ -37,4 +37,9 @@ class HorseApp < Sinatra::Base
     redirect "/horses"
   end
 
+  get '/jockeys/:id' do
+    @jockey = Jockey.find(params[:id])
+    erb :"jockeys/show"
+  end
+
 end
