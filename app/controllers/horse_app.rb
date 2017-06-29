@@ -1,13 +1,10 @@
 class HorseApp < Sinatra::Base
 
+  set :method_override, true
+
   get '/horses' do
     @horses = Horse.all
     erb :"horses/index"
-  end
-
-  get '/jockeys' do
-    @jockeys = Jockey.all
-    erb :"jockeys/index"
   end
 
   get '/horses/new' do
@@ -35,14 +32,14 @@ class HorseApp < Sinatra::Base
     erb :"horses/show"
   end
 
-  get '/jockeys/:id' do
-    @jockey = Jockey.find(params[:id])
-    erb :"jockeys/show"
-  end
-
   delete '/horses/:id' do |id|
     Horse.destroy(id.to_i)
     redirect '/horses'
+  end
+
+  get '/jockeys/:id' do
+    @jockey = Jockey.find(params[:id])
+    erb :"jockeys/show"
   end
 
 end
