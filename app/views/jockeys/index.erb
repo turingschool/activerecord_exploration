@@ -1,10 +1,12 @@
-<!-- <h1>All Jockeys</h1>
-
-<div id="jockeys">
+<head>
+  <title>Jockeys</title>
+</head>
+<h1>TURING STABLES MOD 2 DERBY: JOCKEY LIST</h1>
+<div>
   <% @jockeys.each do |jockey| %>
-    <h1><%= jockey.name %></h1>
-    <% jockey.horses.each do |film| %>
-      <h3><%= horse.name %></h3>
-    <% end %>
+    <div>
+      <h3><%= jockey.name %></h3>
+      <p><a href="/jockeys/<%= jockey.id %>">Additional Info</a></p>
+    </div>
   <% end %>
-</div> -->
+</div>
