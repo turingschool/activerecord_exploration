@@ -1,7 +1,14 @@
 <h1>Horses!</h1>
 
+<a href="/horses/new">New Horse</a>
+
 <% @horses.each do |horse| %>
-  <p><%= horse.name %></p>
-  <p><%= horse.age %></p>
-  <p><%= horse.total_winnings %></p><br/><br/>
+    <h3><%= horse.name %></h3>
+    <p><%= horse.age %></p>
+    <p><%= horse.total_winnings %></p>
+    <button class="btn btn-primary edit-delete"><a href="/horses/<%= horse.id  %>/edit">Edit</a></button>
+    <form action="/horses/<%= horse.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="button" value="delete" class="btn btn-primary edit-delete"/>
+    </form>
 <% end %>
