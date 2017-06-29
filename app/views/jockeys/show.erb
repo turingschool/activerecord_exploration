@@ -6,4 +6,4 @@
 <% end %>
 
 <h1><%= @jockey.name %>'s Total Winnings:</h1>
-<%= @jockey.horses.sum("total_winnings") %>
+<%= @jockey.horses.total_winnings_by_jockey %>
