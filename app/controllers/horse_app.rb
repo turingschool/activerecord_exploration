@@ -32,4 +32,9 @@ class HorseApp < Sinatra::Base
     redirect "/horses"
   end
 
+  delete '/horses/:id' do
+    Horse.destroy(params[:id].to_i)
+    redirect "/horses"
+  end
+
 end

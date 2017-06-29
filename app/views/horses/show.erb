@@ -4,3 +4,9 @@
 <p> <%= @horse.jockey_id %> </p>
 <p> <%= @horse.breed_id %> </p>
 <p> <%= @horse.total_winnings %> </p>
+
+
+<form action='<%= @horse.id %>' method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="DELETE">
+</form>
