@@ -60,7 +60,7 @@ See if you can write and execute (in `tux`) ActiveRecord queries to accomplish t
 - Find the Horse with total winnings of 4000 and age 55
 - Find the Horse with name "Paulo" and total winnings of 45000
 
-**What happens if we have more than one record in our database that satisfies the conditions we pass to our `#find_by` method?** idk... what does actually happen here?
+**What happens if we have more than one record in our database that satisfies the conditions we pass to our `#find_by` method?**
 
 #### #where
 
