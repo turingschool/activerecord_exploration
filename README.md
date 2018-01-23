@@ -52,7 +52,7 @@ Similar to `find`, `find_by` will run a SQL query to find the specific record ba
 For example, if I wanted to find the horse with the name "Penelope", I'd run `Horse.find_by(name: "Penelope")`. You can also pass `find_by` more than one argument. If I wanted to find the horse with the name "Penelope" and age 29, I could run `Horse.find_by(name: "Penelope", age: 29)`. Notice that I'm passing in key/value pairs to `find_by`.
 
 Another important note is if we pass `find_by` a value that our database doesn't have (for example: `Horse.find_by(name: "Hola")`), the return value with be `nil`. ActiveRecord will not through an error, but rather return `nil`.
-Practice using `#find_by`. 
+Practice using `#find_by`.
 
 See if you can write and execute (in `tux`) ActiveRecord queries to accomplish the following:
 
@@ -60,15 +60,15 @@ See if you can write and execute (in `tux`) ActiveRecord queries to accomplish t
 - Find the Horse with total winnings of 4000 and age 55
 - Find the Horse with name "Paulo" and total winnings of 45000
 
-**What happens if we have more than one record in our database that satisfies the conditions we pass to our `#find_by` method?**
+**What happens if we have more than one record in our database that satisfies the conditions we pass to our `#find_by` method?** idk... what does actually happen here?
 
 #### #where
 
-Similar to `#find_by`, `#where` accepts arguments in key/value pairs and queries our database accordingly. We can pass `#where` as many key/value pairs as we'd like and it will return every record that it finds that matches our query. 
+Similar to `#find_by`, `#where` accepts arguments in key/value pairs and queries our database accordingly. We can pass `#where` as many key/value pairs as we'd like and it will return every record that it finds that matches our query.
 
 The difference between `#find_by` and `#where` is that `#find_by` will always return the **first** match from the database. `#where` returns every match that it can find in an Array. If it only finds one match, it will still return the findings in an Array.
 
-If I wanted to find all the horses who are named "Penelope", I'd execute `Horse.where(name: "Penelope")`. 
+If I wanted to find all the horses who are named "Penelope", I'd execute `Horse.where(name: "Penelope")`.
 
 Practice using `#where`. See if you can write and execute (in `tux`) ActiveRecord queries to accomplish the following:
 
@@ -78,7 +78,7 @@ Practice using `#where`. See if you can write and execute (in `tux`) ActiveRecor
 
 #### #new
 
-In order to create a new horse, we can use the `#new` method. Similar to the method we created previously, this will take a Hash of arguments. This method can be a bit deceving though. When you execute `Horse.new(name: "Patty")` in your `tux` console, what is the return value? Do you see that any SQL was executed? 
+In order to create a new horse, we can use the `#new` method. Similar to the method we created previously, this will take a Hash of arguments. This method can be a bit deceiving though. When you execute `Horse.new(name: "Patty")` in your `tux` console, what is the return value? Do you see that any SQL was executed?
 
 The answer is no because this `Horse` was not actually sent to the database. `#new` simply creates a new instance of Horse. In order to save this in the database, we need to call `#save` on the instance of `Horse`. You should see an `INSERT INTO` statement in the console after you call this method.
 
